@@ -8,13 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Second_Year_Project
-{
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
+namespace Second_Year_Project{
+    public partial class Form1 : Form{
+        public Form1(){
             InitializeComponent();
         }
+
+        #region Buttons to forms
+        private void btn_new_device_Click(object sender, EventArgs e){frm_new_device frm = new frm_new_device();frm.Show();}
+
+        private void btn_update_device_Click(object sender, EventArgs e){}
+
+        private void btn_new_standard_Click(object sender, EventArgs e){}
+
+        private void btn_update_standard_Click(object sender, EventArgs e){ }
+
+        private void btn_edit_functions_Click(object sender, EventArgs e){}
+
+        private void btn_test_device_Click(object sender, EventArgs e){}
+
+        private void btn_test_standard_Click(object sender, EventArgs e){ }
+        #endregion
     }
 }
