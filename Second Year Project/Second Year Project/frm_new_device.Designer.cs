@@ -39,21 +39,33 @@
             this.date_DOC = new System.Windows.Forms.DateTimePicker();
             this.lbl_date_of_cal = new System.Windows.Forms.Label();
             this.btn_create = new System.Windows.Forms.Button();
+            this.Device_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Count = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_of_purchase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_of_cal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // list_current_devices
             // 
+            this.list_current_devices.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Device_ID,
+            this.Model,
+            this.Count,
+            this.Date_of_purchase,
+            this.Date_of_cal});
             this.list_current_devices.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.list_current_devices.HideSelection = false;
             this.list_current_devices.Location = new System.Drawing.Point(10, 10);
             this.list_current_devices.Name = "list_current_devices";
-            this.list_current_devices.Size = new System.Drawing.Size(300, 430);
+            this.list_current_devices.Size = new System.Drawing.Size(400, 430);
             this.list_current_devices.TabIndex = 1;
             this.list_current_devices.UseCompatibleStateImageBehavior = false;
+            this.list_current_devices.View = System.Windows.Forms.View.Details;
             // 
             // txt_device_name
             // 
-            this.txt_device_name.Location = new System.Drawing.Point(470, 60);
+            this.txt_device_name.Location = new System.Drawing.Point(555, 60);
             this.txt_device_name.Name = "txt_device_name";
             this.txt_device_name.Size = new System.Drawing.Size(200, 20);
             this.txt_device_name.TabIndex = 2;
@@ -62,7 +74,7 @@
             // lbl_title
             // 
             this.lbl_title.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_title.Location = new System.Drawing.Point(330, 10);
+            this.lbl_title.Location = new System.Drawing.Point(420, 10);
             this.lbl_title.Name = "lbl_title";
             this.lbl_title.Size = new System.Drawing.Size(160, 40);
             this.lbl_title.TabIndex = 3;
@@ -72,7 +84,7 @@
             // 
             this.lbl_device_name.AutoSize = true;
             this.lbl_device_name.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_device_name.Location = new System.Drawing.Point(330, 60);
+            this.lbl_device_name.Location = new System.Drawing.Point(420, 60);
             this.lbl_device_name.Name = "lbl_device_name";
             this.lbl_device_name.Size = new System.Drawing.Size(92, 19);
             this.lbl_device_name.TabIndex = 4;
@@ -82,7 +94,7 @@
             // 
             this.lbl_count.AutoSize = true;
             this.lbl_count.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_count.Location = new System.Drawing.Point(330, 100);
+            this.lbl_count.Location = new System.Drawing.Point(420, 100);
             this.lbl_count.Name = "lbl_count";
             this.lbl_count.Size = new System.Drawing.Size(47, 19);
             this.lbl_count.TabIndex = 6;
@@ -90,7 +102,7 @@
             // 
             // txt_count
             // 
-            this.txt_count.Location = new System.Drawing.Point(470, 100);
+            this.txt_count.Location = new System.Drawing.Point(555, 100);
             this.txt_count.Name = "txt_count";
             this.txt_count.Size = new System.Drawing.Size(200, 20);
             this.txt_count.TabIndex = 5;
@@ -100,7 +112,7 @@
             // 
             this.lbl_date_of_purchase.AutoSize = true;
             this.lbl_date_of_purchase.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_date_of_purchase.Location = new System.Drawing.Point(330, 140);
+            this.lbl_date_of_purchase.Location = new System.Drawing.Point(420, 140);
             this.lbl_date_of_purchase.Name = "lbl_date_of_purchase";
             this.lbl_date_of_purchase.Size = new System.Drawing.Size(118, 19);
             this.lbl_date_of_purchase.TabIndex = 7;
@@ -109,7 +121,7 @@
             // date_DOP
             // 
             this.date_DOP.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_DOP.Location = new System.Drawing.Point(470, 140);
+            this.date_DOP.Location = new System.Drawing.Point(555, 140);
             this.date_DOP.Name = "date_DOP";
             this.date_DOP.Size = new System.Drawing.Size(200, 25);
             this.date_DOP.TabIndex = 8;
@@ -117,7 +129,7 @@
             // date_DOC
             // 
             this.date_DOC.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_DOC.Location = new System.Drawing.Point(470, 180);
+            this.date_DOC.Location = new System.Drawing.Point(555, 180);
             this.date_DOC.Name = "date_DOC";
             this.date_DOC.Size = new System.Drawing.Size(200, 25);
             this.date_DOC.TabIndex = 10;
@@ -126,7 +138,7 @@
             // 
             this.lbl_date_of_cal.AutoSize = true;
             this.lbl_date_of_cal.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_date_of_cal.Location = new System.Drawing.Point(330, 180);
+            this.lbl_date_of_cal.Location = new System.Drawing.Point(420, 180);
             this.lbl_date_of_cal.Name = "lbl_date_of_cal";
             this.lbl_date_of_cal.Size = new System.Drawing.Size(82, 19);
             this.lbl_date_of_cal.TabIndex = 9;
@@ -135,7 +147,7 @@
             // btn_create
             // 
             this.btn_create.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_create.Location = new System.Drawing.Point(334, 219);
+            this.btn_create.Location = new System.Drawing.Point(420, 219);
             this.btn_create.Name = "btn_create";
             this.btn_create.Size = new System.Drawing.Size(336, 35);
             this.btn_create.TabIndex = 11;
@@ -143,11 +155,35 @@
             this.btn_create.UseVisualStyleBackColor = true;
             this.btn_create.Click += new System.EventHandler(this.btn_create_Click);
             // 
+            // Device_ID
+            // 
+            this.Device_ID.Text = "ID";
+            this.Device_ID.Width = 25;
+            // 
+            // Model
+            // 
+            this.Model.Text = "Model";
+            // 
+            // Count
+            // 
+            this.Count.Text = "Count";
+            this.Count.Width = 50;
+            // 
+            // Date_of_purchase
+            // 
+            this.Date_of_purchase.Text = "Date Of Purchase";
+            this.Date_of_purchase.Width = 130;
+            // 
+            // Date_of_cal
+            // 
+            this.Date_of_cal.Text = "Date Of Cal";
+            this.Date_of_cal.Width = 130;
+            // 
             // frm_new_device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 451);
+            this.ClientSize = new System.Drawing.Size(764, 451);
             this.Controls.Add(this.btn_create);
             this.Controls.Add(this.date_DOC);
             this.Controls.Add(this.lbl_date_of_cal);
@@ -180,5 +216,10 @@
         private System.Windows.Forms.DateTimePicker date_DOC;
         private System.Windows.Forms.Label lbl_date_of_cal;
         private System.Windows.Forms.Button btn_create;
+        private System.Windows.Forms.ColumnHeader Device_ID;
+        private System.Windows.Forms.ColumnHeader Model;
+        private System.Windows.Forms.ColumnHeader Count;
+        private System.Windows.Forms.ColumnHeader Date_of_purchase;
+        private System.Windows.Forms.ColumnHeader Date_of_cal;
     }
 }
