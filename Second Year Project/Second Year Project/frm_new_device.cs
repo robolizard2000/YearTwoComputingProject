@@ -34,7 +34,14 @@ namespace Second_Year_Project{
             dbConnector.Close();
         }
         private void btn_create_Click(object sender, EventArgs e){
-            
+            clsDBConnector dbConnector = new clsDBConnector();
+            string device_name = txt_device_name.Text;
+            int count = Convert.ToInt32(txt_count.Text);
+            string cmdStr = $"INSERT INTO Measurement_device  (Model, [Count], Date_of_purchase, Date_of_cal) " +
+                $"VALUES ('{device_name}' , {count} , '{date_DOP.Value.Date}', '{date_DOC.Value.Date}')";
+            dbConnector.Connect();
+            dbConnector.DoDML(cmdStr);
+            dbConnector.Close();
         }
 
         private void frm_new_device_Load(object sender, EventArgs e){
