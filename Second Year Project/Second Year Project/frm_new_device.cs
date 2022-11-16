@@ -14,8 +14,7 @@ namespace Second_Year_Project{
         public frm_new_device(){
             InitializeComponent();
         }
-        public void DisplayData()
-        {
+        public void DisplayData(){
             clsDBConnector dbConnector = new clsDBConnector();
             OleDbDataReader dr;
             string sqlStr;
@@ -42,6 +41,7 @@ namespace Second_Year_Project{
             dbConnector.Connect();
             dbConnector.DoDML(cmdStr);
             dbConnector.Close();
+            DisplayData();
         }
 
         private void frm_new_device_Load(object sender, EventArgs e){

@@ -17,9 +17,7 @@ namespace Second_Year_Project{
         #region Buttons to forms
         private void btn_new_device_Click(object sender, EventArgs e){frm_new_device frm = new frm_new_device();frm.Show();}
 
-        private void btn_update_device_Click(object sender, EventArgs e){}
-
-        private void btn_new_standard_Click(object sender, EventArgs e){}
+        private void btn_new_standard_Click(object sender, EventArgs e){ frm_new_standard frm = new frm_new_standard(); frm.Show(); }
 
         private void btn_update_standard_Click(object sender, EventArgs e){ }
 

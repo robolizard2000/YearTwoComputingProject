@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.list_current_devices = new System.Windows.Forms.ListView();
+            this.Device_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Count = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_of_purchase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Date_of_cal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txt_device_name = new System.Windows.Forms.TextBox();
             this.lbl_title = new System.Windows.Forms.Label();
             this.lbl_device_name = new System.Windows.Forms.Label();
@@ -39,11 +44,6 @@
             this.date_DOC = new System.Windows.Forms.DateTimePicker();
             this.lbl_date_of_cal = new System.Windows.Forms.Label();
             this.btn_create = new System.Windows.Forms.Button();
-            this.Device_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Count = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Date_of_purchase = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Date_of_cal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // list_current_devices
@@ -62,6 +62,30 @@
             this.list_current_devices.TabIndex = 1;
             this.list_current_devices.UseCompatibleStateImageBehavior = false;
             this.list_current_devices.View = System.Windows.Forms.View.Details;
+            // 
+            // Device_ID
+            // 
+            this.Device_ID.Text = "ID";
+            this.Device_ID.Width = 25;
+            // 
+            // Model
+            // 
+            this.Model.Text = "Model";
+            // 
+            // Count
+            // 
+            this.Count.Text = "Count";
+            this.Count.Width = 50;
+            // 
+            // Date_of_purchase
+            // 
+            this.Date_of_purchase.Text = "Date Of Purchase";
+            this.Date_of_purchase.Width = 130;
+            // 
+            // Date_of_cal
+            // 
+            this.Date_of_cal.Text = "Date Of Cal";
+            this.Date_of_cal.Width = 130;
             // 
             // txt_device_name
             // 
@@ -155,30 +179,6 @@
             this.btn_create.UseVisualStyleBackColor = true;
             this.btn_create.Click += new System.EventHandler(this.btn_create_Click);
             // 
-            // Device_ID
-            // 
-            this.Device_ID.Text = "ID";
-            this.Device_ID.Width = 25;
-            // 
-            // Model
-            // 
-            this.Model.Text = "Model";
-            // 
-            // Count
-            // 
-            this.Count.Text = "Count";
-            this.Count.Width = 50;
-            // 
-            // Date_of_purchase
-            // 
-            this.Date_of_purchase.Text = "Date Of Purchase";
-            this.Date_of_purchase.Width = 130;
-            // 
-            // Date_of_cal
-            // 
-            this.Date_of_cal.Text = "Date Of Cal";
-            this.Date_of_cal.Width = 130;
-            // 
             // frm_new_device
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,7 +196,7 @@
             this.Controls.Add(this.txt_device_name);
             this.Controls.Add(this.list_current_devices);
             this.Name = "frm_new_device";
-            this.Text = "frm_new_device";
+            this.Text = "New Device";
             this.Load += new System.EventHandler(this.frm_new_device_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

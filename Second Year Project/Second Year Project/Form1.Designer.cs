@@ -30,8 +30,8 @@
         {
             this.lbl_title = new System.Windows.Forms.Label();
             this.btn_new_device = new System.Windows.Forms.Button();
-            this.btn_update_device = new System.Windows.Forms.Button();
-            this.btn_update_standard = new System.Windows.Forms.Button();
+            this.btn_config_device = new System.Windows.Forms.Button();
+            this.btn_config_standard = new System.Windows.Forms.Button();
             this.btn_new_standard = new System.Windows.Forms.Button();
             this.btn_test_device = new System.Windows.Forms.Button();
             this.btn_edit_functions = new System.Windows.Forms.Button();
@@ -59,27 +59,25 @@
             this.btn_new_device.UseVisualStyleBackColor = true;
             this.btn_new_device.Click += new System.EventHandler(this.btn_new_device_Click);
             // 
-            // btn_update_device
+            // btn_config_device
             // 
-            this.btn_update_device.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_device.Location = new System.Drawing.Point(100, 116);
-            this.btn_update_device.Name = "btn_update_device";
-            this.btn_update_device.Size = new System.Drawing.Size(300, 40);
-            this.btn_update_device.TabIndex = 2;
-            this.btn_update_device.Text = "Update Measurement Device";
-            this.btn_update_device.UseVisualStyleBackColor = true;
-            this.btn_update_device.Click += new System.EventHandler(this.btn_update_device_Click);
+            this.btn_config_device.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_config_device.Location = new System.Drawing.Point(100, 116);
+            this.btn_config_device.Name = "btn_config_device";
+            this.btn_config_device.Size = new System.Drawing.Size(300, 40);
+            this.btn_config_device.TabIndex = 2;
+            this.btn_config_device.Text = "Config Measurement Device";
+            this.btn_config_device.UseVisualStyleBackColor = true;
             // 
-            // btn_update_standard
+            // btn_config_standard
             // 
-            this.btn_update_standard.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update_standard.Location = new System.Drawing.Point(100, 208);
-            this.btn_update_standard.Name = "btn_update_standard";
-            this.btn_update_standard.Size = new System.Drawing.Size(300, 40);
-            this.btn_update_standard.TabIndex = 4;
-            this.btn_update_standard.Text = "Update Standard";
-            this.btn_update_standard.UseVisualStyleBackColor = true;
-            this.btn_update_standard.Click += new System.EventHandler(this.btn_update_standard_Click);
+            this.btn_config_standard.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_config_standard.Location = new System.Drawing.Point(100, 208);
+            this.btn_config_standard.Name = "btn_config_standard";
+            this.btn_config_standard.Size = new System.Drawing.Size(300, 40);
+            this.btn_config_standard.TabIndex = 4;
+            this.btn_config_standard.Text = "Config Standard";
+            this.btn_config_standard.UseVisualStyleBackColor = true;
             // 
             // btn_new_standard
             // 
@@ -133,9 +131,9 @@
             this.Controls.Add(this.btn_test_standard);
             this.Controls.Add(this.btn_test_device);
             this.Controls.Add(this.btn_edit_functions);
-            this.Controls.Add(this.btn_update_standard);
+            this.Controls.Add(this.btn_config_standard);
             this.Controls.Add(this.btn_new_standard);
-            this.Controls.Add(this.btn_update_device);
+            this.Controls.Add(this.btn_config_device);
             this.Controls.Add(this.btn_new_device);
             this.Controls.Add(this.lbl_title);
             this.Name = "Form1";
@@ -148,8 +146,8 @@
 
         private System.Windows.Forms.Label lbl_title;
         private System.Windows.Forms.Button btn_new_device;
-        private System.Windows.Forms.Button btn_update_device;
-        private System.Windows.Forms.Button btn_update_standard;
+        private System.Windows.Forms.Button btn_config_device;
+        private System.Windows.Forms.Button btn_config_standard;
         private System.Windows.Forms.Button btn_new_standard;
         private System.Windows.Forms.Button btn_test_device;
         private System.Windows.Forms.Button btn_edit_functions;
