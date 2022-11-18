@@ -19,13 +19,13 @@ namespace Second_Year_Project{
 
         private void btn_new_standard_Click(object sender, EventArgs e){ frm_new_standard frm = new frm_new_standard(); frm.Show(); }
 
-        private void btn_update_standard_Click(object sender, EventArgs e){ }
-
         private void btn_edit_functions_Click(object sender, EventArgs e){}
 
         private void btn_test_device_Click(object sender, EventArgs e){}
 
         private void btn_test_standard_Click(object sender, EventArgs e){ }
         #endregion
+
+        private void btn_config_device_Click(object sender, EventArgs e){frm_device_config frm = new frm_device_config(); frm.Show();}
     }
 }

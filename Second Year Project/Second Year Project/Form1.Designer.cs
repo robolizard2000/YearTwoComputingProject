@@ -68,6 +68,7 @@
             this.btn_config_device.TabIndex = 2;
             this.btn_config_device.Text = "Config Measurement Device";
             this.btn_config_device.UseVisualStyleBackColor = true;
+            this.btn_config_device.Click += new System.EventHandler(this.btn_config_device_Click);
             // 
             // btn_config_standard
             // 
