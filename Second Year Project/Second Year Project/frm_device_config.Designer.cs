@@ -34,6 +34,7 @@
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.function_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lbl_title
@@ -50,7 +51,8 @@
             this.list_current_standards.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Measurement_ID,
             this.Model,
-            this.Function});
+            this.Function,
+            this.function_name});
             this.list_current_standards.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.list_current_standards.HideSelection = false;
             this.list_current_standards.Location = new System.Drawing.Point(12, 52);
@@ -82,6 +84,12 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(115, 21);
             this.comboBox1.TabIndex = 26;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // function_name
+            // 
+            this.function_name.Text = "Function Name";
+            this.function_name.Width = 153;
             // 
             // frm_device_config
             // 
@@ -105,5 +113,6 @@
         private System.Windows.Forms.ColumnHeader Model;
         private System.Windows.Forms.ColumnHeader Function;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ColumnHeader function_name;
     }
 }
