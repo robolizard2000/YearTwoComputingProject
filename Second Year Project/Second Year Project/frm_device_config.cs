@@ -37,7 +37,12 @@ namespace Second_Year_Project{
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){
-            selected_model = comboBox1.GetItemText(comboBox1.SelectedIndex);
+            selected_model = cb_selected_device.GetItemText(cb_selected_device.SelectedIndex);
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

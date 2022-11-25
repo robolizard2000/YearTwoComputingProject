@@ -27,5 +27,10 @@ namespace Second_Year_Project{
         #endregion
 
         private void btn_config_device_Click(object sender, EventArgs e){frm_device_config frm = new frm_device_config(); frm.Show();}
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

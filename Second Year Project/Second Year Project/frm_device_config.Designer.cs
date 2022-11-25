@@ -33,8 +33,11 @@
             this.Measurement_ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.function_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cb_selected_device = new System.Windows.Forms.ComboBox();
+            this.lbl_device_name = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cb_selected_function = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -77,32 +80,65 @@
             this.Function.Text = "Function";
             this.Function.Width = 142;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(515, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(115, 21);
-            this.comboBox1.TabIndex = 26;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // function_name
             // 
             this.function_name.Text = "Function Name";
             this.function_name.Width = 153;
+            // 
+            // cb_selected_device
+            // 
+            this.cb_selected_device.FormattingEnabled = true;
+            this.cb_selected_device.Location = new System.Drawing.Point(526, 52);
+            this.cb_selected_device.Name = "cb_selected_device";
+            this.cb_selected_device.Size = new System.Drawing.Size(115, 21);
+            this.cb_selected_device.TabIndex = 26;
+            this.cb_selected_device.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // lbl_device_name
+            // 
+            this.lbl_device_name.AutoSize = true;
+            this.lbl_device_name.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_device_name.Location = new System.Drawing.Point(420, 54);
+            this.lbl_device_name.Name = "lbl_device_name";
+            this.lbl_device_name.Size = new System.Drawing.Size(92, 19);
+            this.lbl_device_name.TabIndex = 27;
+            this.lbl_device_name.Text = "Device Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(420, 87);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 19);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Function Name";
+            // 
+            // cb_selected_function
+            // 
+            this.cb_selected_function.FormattingEnabled = true;
+            this.cb_selected_function.Location = new System.Drawing.Point(526, 85);
+            this.cb_selected_function.Name = "cb_selected_function";
+            this.cb_selected_function.Size = new System.Drawing.Size(115, 21);
+            this.cb_selected_function.TabIndex = 28;
+            this.cb_selected_function.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // frm_device_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 451);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cb_selected_function);
+            this.Controls.Add(this.lbl_device_name);
+            this.Controls.Add(this.cb_selected_device);
             this.Controls.Add(this.lbl_title);
             this.Controls.Add(this.list_current_standards);
             this.Name = "frm_device_config";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.frm_device_config_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,7 +148,10 @@
         private System.Windows.Forms.ColumnHeader Measurement_ID;
         private System.Windows.Forms.ColumnHeader Model;
         private System.Windows.Forms.ColumnHeader Function;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_selected_device;
         private System.Windows.Forms.ColumnHeader function_name;
+        private System.Windows.Forms.Label lbl_device_name;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb_selected_function;
     }
 }
