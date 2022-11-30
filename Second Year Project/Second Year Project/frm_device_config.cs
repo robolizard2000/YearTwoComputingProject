@@ -11,11 +11,24 @@ using System.Windows.Forms;
 
 namespace Second_Year_Project{
     public partial class frm_device_config : Form{
+
+        class function_thing{
+            public string function { get; set; }
+            public int function_id { get; set; }
+        }
+        class device_thing{
+            public string device { get; set; }
+            public int device_id { get; set; }
+        }
+
+
         public frm_device_config(){
             InitializeComponent();
         }
         public string selected_model = "UT61E";
-        public void DisplayData(){
+        public int selected_modle_id = 0;
+        public int selected_function_id = 0;
+        public void DisplayData_model_list(){
             clsDBConnector dbConnector = new clsDBConnector();
             OleDbDataReader dr;
             string sqlStr;
@@ -33,15 +46,51 @@ namespace Second_Year_Project{
         }
 
         private void frm_device_config_Load(object sender, EventArgs e){
-            DisplayData();
+            DisplayData_model_list();
+
+            #region Get ComboBox For Device Name
+            List<device_thing> device_list = new List<device_thing>();
+            clsDBConnector dbConnector = new clsDBConnector();
+            OleDbDataReader dr;
+            string sqlStr;
+            dbConnector.Connect();
+            sqlStr = " SELECT Model, Device_ID FROM Measurement_device";
+            dr = dbConnector.DoSQL(sqlStr);
+            while (dr.Read())
+            {
+                device_list.Add(new device_thing { device = dr[0].ToString(), device_id = Convert.ToInt32(dr[1]) });
+            }
+            cb_selected_device.DisplayMember = "device";
+            cb_selected_device.ValueMember = "device_id";
+            cb_selected_device.DataSource = device_list;
+            #endregion
+
+            #region Get ComboBox For Function Name
+            List<function_thing> function_list = new List<function_thing>();
+            sqlStr = " SELECT Function_name, Function_ID FROM Functions";
+            dr = dbConnector.DoSQL(sqlStr);
+            while (dr.Read()){
+                function_list.Add(new function_thing { function = dr[0].ToString(), function_id = Convert.ToInt32(dr[1]) });
+            }
+            cb_selected_function.DisplayMember = "function";
+            cb_selected_function.ValueMember = "function_id";
+            cb_selected_function.DataSource = function_list;
+            dbConnector.Close();
+            #endregion
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){
-            selected_model = cb_selected_device.GetItemText(cb_selected_device.SelectedIndex);
+            selected_model = cb_selected_device.GetItemText(cb_selected_device.SelectedItem);
+            selected_modle_id = Convert.ToInt32(cb_selected_device.SelectedIndex);
+            DisplayData_model_list();
         }
 
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e){
+            selected_function_id = Convert.ToInt32(cb_selected_function.SelectedIndex);
+            
+        }
+
+        private void btn_add_function_Click(object sender, EventArgs e){
 
         }
     }

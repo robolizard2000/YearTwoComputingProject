@@ -38,6 +38,7 @@
             this.lbl_device_name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_selected_function = new System.Windows.Forms.ComboBox();
+            this.btn_add_function = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -56,7 +57,7 @@
             this.Model,
             this.Function,
             this.function_name});
-            this.list_current_standards.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_current_standards.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.list_current_standards.HideSelection = false;
             this.list_current_standards.Location = new System.Drawing.Point(12, 52);
             this.list_current_standards.Name = "list_current_standards";
@@ -123,11 +124,22 @@
             this.cb_selected_function.TabIndex = 28;
             this.cb_selected_function.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
+            // btn_add_function
+            // 
+            this.btn_add_function.Location = new System.Drawing.Point(424, 121);
+            this.btn_add_function.Name = "btn_add_function";
+            this.btn_add_function.Size = new System.Drawing.Size(217, 51);
+            this.btn_add_function.TabIndex = 30;
+            this.btn_add_function.Text = "Add Function";
+            this.btn_add_function.UseVisualStyleBackColor = true;
+            this.btn_add_function.Click += new System.EventHandler(this.btn_add_function_Click);
+            // 
             // frm_device_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 451);
+            this.Controls.Add(this.btn_add_function);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_selected_function);
             this.Controls.Add(this.lbl_device_name);
@@ -153,5 +165,6 @@
         private System.Windows.Forms.Label lbl_device_name;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_selected_function;
+        private System.Windows.Forms.Button btn_add_function;
     }
 }
