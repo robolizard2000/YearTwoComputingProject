@@ -91,7 +91,12 @@ namespace Second_Year_Project{
         }
 
         private void btn_add_function_Click(object sender, EventArgs e){
-
+            clsDBConnector dbConnector = new clsDBConnector();
+            string cmdStr = $"INSERT INTO Measurement_output (Device_ID, Fuction_ID) VALUES({selected_modle_id},{selected_function_id})";
+            dbConnector.Connect();
+            dbConnector.DoDML(cmdStr);
+            dbConnector.Close();
+            DisplayData_model_list();
         }
     }
 }
