@@ -81,18 +81,20 @@ namespace Second_Year_Project{
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){
             selected_model = cb_selected_device.GetItemText(cb_selected_device.SelectedItem);
-            selected_modle_id = Convert.ToInt32(cb_selected_device.SelectedIndex);
+            selected_modle_id = Convert.ToInt32(cb_selected_device.SelectedIndex) + 1;
+            
             DisplayData_model_list();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e){
-            selected_function_id = Convert.ToInt32(cb_selected_function.SelectedIndex);
-            
+            selected_function_id = 1 + Convert.ToInt32(cb_selected_function.SelectedIndex);
+            label2.Text = selected_function_id.ToString();
         }
 
         private void btn_add_function_Click(object sender, EventArgs e){
             clsDBConnector dbConnector = new clsDBConnector();
-            string cmdStr = $"INSERT INTO Measurement_output (Device_ID, Fuction_ID) VALUES({selected_modle_id},{selected_function_id})";
+            string cmdStr = ($"INSERT INTO Measurement_output (Device_ID, Fuction_ID) " + 
+                            $"VALUES({selected_modle_id},{selected_function_id})");
             dbConnector.Connect();
             dbConnector.DoDML(cmdStr);
             dbConnector.Close();

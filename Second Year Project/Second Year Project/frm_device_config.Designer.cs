@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cb_selected_function = new System.Windows.Forms.ComboBox();
             this.btn_add_function = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -134,11 +135,21 @@
             this.btn_add_function.UseVisualStyleBackColor = true;
             this.btn_add_function.Click += new System.EventHandler(this.btn_add_function_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(522, 237);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "label2";
+            // 
             // frm_device_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 451);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_add_function);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_selected_function);
@@ -166,5 +177,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_selected_function;
         private System.Windows.Forms.Button btn_add_function;
+        private System.Windows.Forms.Label label2;
     }
 }
