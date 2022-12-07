@@ -88,7 +88,6 @@ namespace Second_Year_Project{
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e){
             selected_function_id = 1 + Convert.ToInt32(cb_selected_function.SelectedIndex);
-            label2.Text = selected_function_id.ToString();
         }
 
         private void btn_add_function_Click(object sender, EventArgs e){
