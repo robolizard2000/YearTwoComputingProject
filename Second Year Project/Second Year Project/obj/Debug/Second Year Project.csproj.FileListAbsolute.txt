@@ -12,3 +12,4 @@ Z:\CJMANLEY\Year2\repo\Second Year Project\Second Year Project\obj\Debug\Second 
 Z:\CJMANLEY\Year2\repo\Second Year Project\Second Year Project\obj\Debug\Second Year Project.pdb
 Z:\CJMANLEY\Year2\repo\Second Year Project\Second Year Project\obj\Debug\Second_Year_Project.frm_new_standard.resources
 Z:\CJMANLEY\Year2\repo\Second Year Project\Second Year Project\obj\Debug\Second_Year_Project.frm_device_config.resources
+Z:\CJMANLEY\Year2\repo\Second Year Project\Second Year Project\obj\Debug\Second_Year_Project.frm_standard_config.resources

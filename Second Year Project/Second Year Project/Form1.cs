@@ -32,5 +32,7 @@ namespace Second_Year_Project{
         {
 
         }
+
+        private void btn_config_standard_Click(object sender, EventArgs e){frm_standard_config frm = new frm_standard_config(); frm.Show(); }
     }
 }

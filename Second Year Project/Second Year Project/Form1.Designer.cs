@@ -79,6 +79,7 @@
             this.btn_config_standard.TabIndex = 4;
             this.btn_config_standard.Text = "Config Standard";
             this.btn_config_standard.UseVisualStyleBackColor = true;
+            this.btn_config_standard.Click += new System.EventHandler(this.btn_config_standard_Click);
             // 
             // btn_new_standard
             // 
