@@ -39,11 +39,11 @@
             this.Model = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.persision = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.actual_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbl_persision = new System.Windows.Forms.Label();
             this.txt_persision = new System.Windows.Forms.TextBox();
             this.txt_actual_value = new System.Windows.Forms.TextBox();
             this.lbl_actual_value = new System.Windows.Forms.Label();
-            this.actual_value = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // btn_add_function
@@ -140,6 +140,11 @@
             this.persision.Text = "Persision";
             this.persision.Width = 114;
             // 
+            // actual_value
+            // 
+            this.actual_value.Text = "Actual Value";
+            this.actual_value.Width = 107;
+            // 
             // lbl_persision
             // 
             this.lbl_persision.AutoSize = true;
@@ -175,11 +180,6 @@
             this.lbl_actual_value.Size = new System.Drawing.Size(87, 19);
             this.lbl_actual_value.TabIndex = 40;
             this.lbl_actual_value.Text = "Actual Value";
-            // 
-            // actual_value
-            // 
-            this.actual_value.Text = "Actual Value";
-            this.actual_value.Width = 107;
             // 
             // frm_standard_config
             // 
