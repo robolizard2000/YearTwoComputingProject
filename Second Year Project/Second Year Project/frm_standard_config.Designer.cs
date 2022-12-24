@@ -44,6 +44,8 @@
             this.txt_persision = new System.Windows.Forms.TextBox();
             this.txt_actual_value = new System.Windows.Forms.TextBox();
             this.lbl_actual_value = new System.Windows.Forms.Label();
+            this.btn_edit_function = new System.Windows.Forms.Button();
+            this.test = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_add_function
@@ -181,11 +183,32 @@
             this.lbl_actual_value.TabIndex = 40;
             this.lbl_actual_value.Text = "Actual Value";
             // 
+            // btn_edit_function
+            // 
+            this.btn_edit_function.Location = new System.Drawing.Point(425, 254);
+            this.btn_edit_function.Name = "btn_edit_function";
+            this.btn_edit_function.Size = new System.Drawing.Size(217, 51);
+            this.btn_edit_function.TabIndex = 42;
+            this.btn_edit_function.Text = "Edit Function";
+            this.btn_edit_function.UseVisualStyleBackColor = true;
+            this.btn_edit_function.Click += new System.EventHandler(this.btn_edit_function_Click);
+            // 
+            // test
+            // 
+            this.test.AutoSize = true;
+            this.test.Location = new System.Drawing.Point(422, 308);
+            this.test.Name = "test";
+            this.test.Size = new System.Drawing.Size(35, 13);
+            this.test.TabIndex = 43;
+            this.test.Text = "label1";
+            // 
             // frm_standard_config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 451);
+            this.Controls.Add(this.test);
+            this.Controls.Add(this.btn_edit_function);
             this.Controls.Add(this.txt_actual_value);
             this.Controls.Add(this.lbl_actual_value);
             this.Controls.Add(this.txt_persision);
@@ -223,5 +246,7 @@
         private System.Windows.Forms.TextBox txt_actual_value;
         private System.Windows.Forms.Label lbl_actual_value;
         private System.Windows.Forms.ColumnHeader actual_value;
+        private System.Windows.Forms.Button btn_edit_function;
+        private System.Windows.Forms.Label test;
     }
 }

@@ -53,6 +53,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Functions_and_Ranges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Functions_and_Ranges.Designer.cs">
+      <DependentUpon>frm_Functions_and_Ranges.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_standard_config.cs">
       <SubType>Form</SubType>
     </Compile>
