@@ -91,6 +91,9 @@
     <EmbeddedResource Include="frm_device_config.resx">
       <DependentUpon>frm_device_config.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Functions_and_Ranges.resx">
+      <DependentUpon>frm_Functions_and_Ranges.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_new_device.resx">
       <DependentUpon>frm_new_device.cs</DependentUpon>
     </EmbeddedResource>
