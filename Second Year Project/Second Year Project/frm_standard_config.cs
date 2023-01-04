@@ -26,6 +26,7 @@ namespace Second_Year_Project{
             public string Function { get; set; }
             public double Persision { get; set; }
             public double Actual_Value { get; set; }
+            public int Function_ID { get; set; }
         }
         #endregion
         public frm_standard_config(){
@@ -47,15 +48,16 @@ namespace Second_Year_Project{
             OleDbDataReader dr;
             string sqlStr;
             dbConnector.Connect();
-            sqlStr = $"SELECT Standard_output.Output_ID, Standards.Model, Functions.Function, Standard_output.[Precision], Standard_output.Actual_Value " +
+            sqlStr = $"SELECT Standard_output.Output_ID, Standards.Model, Functions.Function, Standard_output.[Precision], Standard_output.Actual_Value,  Standard_output.Function_ID " +
                      $"FROM((Functions INNER JOIN " +
                      $"Standard_output ON Functions.Function_ID = Standard_output.Function_ID) INNER JOIN " + 
                      $"Standards ON Standard_output.Standard_ID = Standards.Standard_ID) " + 
                      $"WHERE       Standards.Model = '{selected_model}'";
             dr = dbConnector.DoSQL(sqlStr);
             list_current_standards.Items.Clear();
-            
+            selected_data_list = new List<selected_data>();
             while (dr.Read()){
+                #region Add data to the deplay and list of classes 
                 selected_data_hold.Clear();
                 list_current_standards.Items.Add(dr[0].ToString());
                 selected_data_hold.Add(dr[0].ToString());
@@ -67,14 +69,16 @@ namespace Second_Year_Project{
                 selected_data_hold.Add(dr[3].ToString());
                 list_current_standards.Items[list_current_standards.Items.Count - 1].SubItems.Add(dr[4].ToString());
                 selected_data_hold.Add(dr[4].ToString());
-
+                selected_data_hold.Add(dr[5].ToString());
                 selected_data hold = new selected_data();
                 hold.ID = Convert.ToInt32(selected_data_hold[0]);
                 hold.Modle = selected_data_hold[1];
                 hold.Function = selected_data_hold[2];
                 hold.Persision = Convert.ToDouble(selected_data_hold[3]);
                 hold.Actual_Value = Convert.ToDouble(selected_data_hold[4]);
+                hold.Function_ID = Convert.ToInt32(selected_data_hold[5]);
                 selected_data_list.Add(hold);
+                #endregion
             }
             dbConnector.Close();
         }
@@ -119,10 +123,12 @@ namespace Second_Year_Project{
             selected_model = cb_selected_standard.Text;
             selected_modle_id = Convert.ToInt32(cb_selected_standard.SelectedIndex)+1;
             DisplayData_model_list();
+            test_edit_avalible();
         }
 
         private void cb_selected_function_SelectedIndexChanged(object sender, EventArgs e){
             selected_function_id = Convert.ToInt32(cb_selected_function.SelectedIndex) + 1;
+            test_edit_avalible();
         }
 
         #region text input and validation
@@ -152,10 +158,14 @@ namespace Second_Year_Project{
         }
 
         private void test_edit_avalible(){
-            string text_hold = "";
             for (int i = 0; i < selected_data_list.Count; i++){
-                text_hold.Insert(text_hold.Length, $"");
-            } 
+                if (selected_data_list[i].Function_ID.ToString() == selected_function_id.ToString()){
+                    txt_persision.Text = selected_data_list[i].Persision.ToString();
+                    txt_actual_value.Text = selected_data_list[i].Actual_Value.ToString();
+                    break;
+                } 
+            }
+            
              
              
         }
