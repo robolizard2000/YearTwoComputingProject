@@ -27,3 +27,4 @@ A:\C#\Plz work\Second Year Project\Second Year Project\obj\Debug\Second Year Pro
 A:\C#\Plz work\Second Year Project\Second Year Project\obj\Debug\Second Year Project.csproj.CoreCompileInputs.cache
 A:\C#\Plz work\Second Year Project\Second Year Project\obj\Debug\Second Year Project.exe
 A:\C#\Plz work\Second Year Project\Second Year Project\obj\Debug\Second Year Project.pdb
+A:\C#\Plz work\Second Year Project\Second Year Project\obj\Debug\Second_Year_Project.frm_Functions_and_Ranges.resources

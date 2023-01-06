@@ -149,9 +149,7 @@ namespace Second_Year_Project{
 
         private void txt_actual_value_TextChanged(object sender, EventArgs e){
             if (txt_actual_value.Text != ""){
-                try { 
-                    selected_actual_value = Convert.ToDouble(txt_actual_value.Text); 
-                }
+                try { selected_actual_value = Convert.ToDouble(txt_actual_value.Text); }
                 catch (System.FormatException) { MessageBox.Show("The value you entered was not a number"); }
             }
         }

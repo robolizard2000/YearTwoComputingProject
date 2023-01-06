@@ -21,23 +21,19 @@ namespace Second_Year_Project{
                 public int standard_id { get; set; }
             }
             class selected_data{
-                public int ID { get; set; }
-                public string Modle { get; set; }
-                public string Function { get; set; }
-                public double Persision { get; set; }
-                public double Actual_Value { get; set; }
                 public int Function_ID { get; set; }
+                public string Function { get; set; }
+                public int Exponent { get; set; }
+                public string Function_name { get; set; }
             }
             #endregion
         public frm_Functions_and_Ranges(){
             InitializeComponent();
         }
         #region Selected data
-        public string selected_model = "SRL-1 1 ohm";
-        public int selected_modle_id = 1;
-        public int selected_function_id = 1;
-        public double selected_persision = 0.0;
-        public double selected_actual_value = 0.0;
+        public string selected_function_name = "";
+        public string selected_function_symblo = "";
+        public int selected_exponent = 0;
         public List<string> selected_data_hold = new List<string>();
         List<selected_data> selected_data_list = new List<selected_data>();
         #endregion
@@ -49,77 +45,93 @@ namespace Second_Year_Project{
             OleDbDataReader dr;
             string sqlStr;
             dbConnector.Connect();
-            sqlStr = $"SELECT Standard_output.Output_ID, Standards.Model, Functions.Function, Standard_output.[Precision], Standard_output.Actual_Value,  Standard_output.Function_ID " +
-                     $"FROM((Functions INNER JOIN " +
-                     $"Standard_output ON Functions.Function_ID = Standard_output.Function_ID) INNER JOIN " +
-                     $"Standards ON Standard_output.Standard_ID = Standards.Standard_ID) " +
-                     $"WHERE       Standards.Model = '{selected_model}'";
+            sqlStr = $"SELECT Function_ID, Function, Exponent, Function_name " +
+                     $"FROM (Functions) ";
             dr = dbConnector.DoSQL(sqlStr);
-            list_current_standards.Items.Clear();
+            list_current_functions.Items.Clear();
             selected_data_list = new List<selected_data>();
             while (dr.Read())
             {
                 #region Add data to the deplay and list of classes 
                 selected_data_hold.Clear();
-                list_current_standards.Items.Add(dr[0].ToString());
+                list_current_functions.Items.Add(dr[0].ToString());
                 selected_data_hold.Add(dr[0].ToString());
-                list_current_standards.Items[list_current_standards.Items.Count - 1].SubItems.Add(dr[1].ToString());
+                list_current_functions.Items[list_current_functions.Items.Count - 1].SubItems.Add(dr[1].ToString());
                 selected_data_hold.Add(dr[1].ToString());
-                list_current_standards.Items[list_current_standards.Items.Count - 1].SubItems.Add(dr[2].ToString());
+                list_current_functions.Items[list_current_functions.Items.Count - 1].SubItems.Add(dr[2].ToString());
                 selected_data_hold.Add(dr[2].ToString());
-                list_current_standards.Items[list_current_standards.Items.Count - 1].SubItems.Add(dr[3].ToString());
+                list_current_functions.Items[list_current_functions.Items.Count - 1].SubItems.Add(dr[3].ToString());
                 selected_data_hold.Add(dr[3].ToString());
-                list_current_standards.Items[list_current_standards.Items.Count - 1].SubItems.Add(dr[4].ToString());
-                selected_data_hold.Add(dr[4].ToString());
-                selected_data_hold.Add(dr[5].ToString());
                 selected_data hold = new selected_data();
-                hold.ID = Convert.ToInt32(selected_data_hold[0]);
-                hold.Modle = selected_data_hold[1];
-                hold.Function = selected_data_hold[2];
-                hold.Persision = Convert.ToDouble(selected_data_hold[3]);
-                hold.Actual_Value = Convert.ToDouble(selected_data_hold[4]);
-                hold.Function_ID = Convert.ToInt32(selected_data_hold[5]);
+                hold.Function_ID = Convert.ToInt32(selected_data_hold[0]);
+                hold.Function = selected_data_hold[1];
+                hold.Exponent = Convert.ToInt32(selected_data_hold[2]);
+                hold.Function_name = selected_data_hold[3];
+                
                 selected_data_list.Add(hold);
                 #endregion
             }
             dbConnector.Close();
         }
 
-        private void frm_standard_config_Load(object sender, EventArgs e)
+        private void frm_Functions_and_Ranges_Load(object sender, EventArgs e)
         {
             DisplayData_model_list();
-            #region Get ComboBox For Device Name
-            List<standard_thing> device_list = new List<standard_thing>();
-            clsDBConnector dbConnector = new clsDBConnector();
-            OleDbDataReader dr;
-            string sqlStr;
-            dbConnector.Connect();
-            sqlStr = " SELECT        Model, Standard_ID FROM Standards";
-            dr = dbConnector.DoSQL(sqlStr);
-            while (dr.Read())
-            {
-                device_list.Add(new standard_thing { standard = dr[0].ToString(), standard_id = Convert.ToInt32(dr[1]) });
-            }
-            cb_selected_standard.DisplayMember = "standard";
-            cb_selected_standard.ValueMember = "standard_id";
-            cb_selected_standard.DataSource = device_list;
-            #endregion
-
-            #region Get ComboBox For Function Name
-            List<function_thing> function_list = new List<function_thing>();
-            sqlStr = " SELECT Function_name, Function_ID FROM Functions";
-            dr = dbConnector.DoSQL(sqlStr);
-            while (dr.Read())
-            {
-                function_list.Add(new function_thing { function = dr[0].ToString(), function_id = Convert.ToInt32(dr[1]) });
-            }
-            cb_selected_function.DisplayMember = "function";
-            cb_selected_function.ValueMember = "function_id";
-            cb_selected_function.DataSource = function_list;
-            dbConnector.Close();
-            #endregion
         }
+
         #endregion
 
+        private void txt_function_name_TextChanged(object sender, EventArgs e){
+            selected_function_name = txt_function_name.Text;
+            int i = test_edit_avalible();
+            if (i != -1){
+                txt_function_symbol.Text = selected_data_list[i].Function.ToString();
+                txt_exponent.Text = selected_data_list[i].Exponent.ToString();
+            }
+        }
+
+        private void txt_function_symbol_TextChanged(object sender, EventArgs e){
+            selected_function_symblo = txt_function_symbol.Text;
+        }
+
+        private void txt_exponent_TextChanged(object sender, EventArgs e){
+            if (txt_exponent.Text != "" && txt_exponent.Text != "-"){
+                try { selected_exponent = Convert.ToInt32(txt_exponent.Text); }
+                catch (System.FormatException) { MessageBox.Show("The value you entered was not a number"); }
+            }
+        }
+
+        private void btn_add_function_Click(object sender, EventArgs e){
+            clsDBConnector dbConnector = new clsDBConnector();
+            string cmdStr = ($"INSERT INTO Functions (Function, Exponent, Function_name) " +
+                            $"VALUES ('{selected_function_symblo}',{selected_exponent},'{selected_function_name}')");
+            dbConnector.Connect();
+            dbConnector.DoDML(cmdStr);
+            dbConnector.Close();
+            DisplayData_model_list();
+        }
+
+        private int test_edit_avalible(){
+            for (int i = 0; i < selected_data_list.Count; i++){
+                if (selected_data_list[i].Function_name.ToString() == selected_function_name.ToString()){
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private void btn_edit_function_Click(object sender, EventArgs e){
+            if (test_edit_avalible() != -1){
+                clsDBConnector dbConnector = new clsDBConnector();
+                string cmdStr = "UPDATE Standard_output " +
+                                $"SET [Precision] ={selected_persision}, Actual_Value ={selected_actual_value} " +
+                                $"WHERE Standard_ID ={selected_modle_id} AND Function_ID ={selected_function_id}";
+                dbConnector.Connect();
+                dbConnector.DoDML(cmdStr);
+                dbConnector.Close();
+                DisplayData_model_list();
+            }
+            else { MessageBox.Show("There was not enought data :["); }
+        }
     }
 }

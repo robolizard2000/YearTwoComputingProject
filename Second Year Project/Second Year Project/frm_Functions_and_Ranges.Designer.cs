@@ -36,7 +36,7 @@ namespace Second_Year_Project
             this.lbl_function_symbol = new System.Windows.Forms.Label();
             this.lbl_function_name = new System.Windows.Forms.Label();
             this.lbl_title = new System.Windows.Forms.Label();
-            this.list_current_standards = new System.Windows.Forms.ListView();
+            this.list_current_functions = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Function_name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Function_symbol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -53,6 +53,7 @@ namespace Second_Year_Project
             this.btn_edit_function.TabIndex = 54;
             this.btn_edit_function.Text = "Edit Function";
             this.btn_edit_function.UseVisualStyleBackColor = true;
+            this.btn_edit_function.Click += new System.EventHandler(this.btn_edit_function_Click);
             // 
             // txt_exponent
             // 
@@ -60,6 +61,7 @@ namespace Second_Year_Project
             this.txt_exponent.Name = "txt_exponent";
             this.txt_exponent.Size = new System.Drawing.Size(115, 20);
             this.txt_exponent.TabIndex = 51;
+            this.txt_exponent.TextChanged += new System.EventHandler(this.txt_exponent_TextChanged);
             // 
             // lbl_exponent
             // 
@@ -79,6 +81,7 @@ namespace Second_Year_Project
             this.btn_add_function.TabIndex = 49;
             this.btn_add_function.Text = "Add Function";
             this.btn_add_function.UseVisualStyleBackColor = true;
+            this.btn_add_function.Click += new System.EventHandler(this.btn_add_function_Click);
             // 
             // lbl_function_symbol
             // 
@@ -109,21 +112,21 @@ namespace Second_Year_Project
             this.lbl_title.TabIndex = 44;
             this.lbl_title.Text = "Functions and Ranges";
             // 
-            // list_current_standards
+            // list_current_functions
             // 
-            this.list_current_standards.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.list_current_functions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Function_name,
             this.Function_symbol,
             this.Exponent});
-            this.list_current_standards.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.list_current_standards.HideSelection = false;
-            this.list_current_standards.Location = new System.Drawing.Point(19, 52);
-            this.list_current_standards.Name = "list_current_standards";
-            this.list_current_standards.Size = new System.Drawing.Size(400, 387);
-            this.list_current_standards.TabIndex = 43;
-            this.list_current_standards.UseCompatibleStateImageBehavior = false;
-            this.list_current_standards.View = System.Windows.Forms.View.Details;
+            this.list_current_functions.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_current_functions.HideSelection = false;
+            this.list_current_functions.Location = new System.Drawing.Point(19, 52);
+            this.list_current_functions.Name = "list_current_functions";
+            this.list_current_functions.Size = new System.Drawing.Size(400, 387);
+            this.list_current_functions.TabIndex = 43;
+            this.list_current_functions.UseCompatibleStateImageBehavior = false;
+            this.list_current_functions.View = System.Windows.Forms.View.Details;
             // 
             // ID
             // 
@@ -151,6 +154,7 @@ namespace Second_Year_Project
             this.txt_function_name.Name = "txt_function_name";
             this.txt_function_name.Size = new System.Drawing.Size(115, 20);
             this.txt_function_name.TabIndex = 55;
+            this.txt_function_name.TextChanged += new System.EventHandler(this.txt_function_name_TextChanged);
             // 
             // txt_function_symbol
             // 
@@ -158,6 +162,7 @@ namespace Second_Year_Project
             this.txt_function_symbol.Name = "txt_function_symbol";
             this.txt_function_symbol.Size = new System.Drawing.Size(115, 20);
             this.txt_function_symbol.TabIndex = 56;
+            this.txt_function_symbol.TextChanged += new System.EventHandler(this.txt_function_symbol_TextChanged);
             // 
             // frm_Functions_and_Ranges
             // 
@@ -173,9 +178,10 @@ namespace Second_Year_Project
             this.Controls.Add(this.lbl_function_symbol);
             this.Controls.Add(this.lbl_function_name);
             this.Controls.Add(this.lbl_title);
-            this.Controls.Add(this.list_current_standards);
+            this.Controls.Add(this.list_current_functions);
             this.Name = "frm_Functions_and_Ranges";
             this.Text = "frm_Functions_and_Ranges";
+            this.Load += new System.EventHandler(this.frm_Functions_and_Ranges_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,7 +196,7 @@ namespace Second_Year_Project
         private System.Windows.Forms.Label lbl_function_symbol;
         private System.Windows.Forms.Label lbl_function_name;
         private System.Windows.Forms.Label lbl_title;
-        private System.Windows.Forms.ListView list_current_standards;
+        private System.Windows.Forms.ListView list_current_functions;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Function_name;
         private System.Windows.Forms.ColumnHeader Function_symbol;
