@@ -123,12 +123,20 @@ namespace Second_Year_Project{
             selected_model = cb_selected_standard.Text;
             selected_modle_id = Convert.ToInt32(cb_selected_standard.SelectedIndex)+1;
             DisplayData_model_list();
-            test_edit_avalible();
+            int i = test_edit_avalible();
+            if (i != -1){
+                txt_persision.Text = selected_data_list[i].Persision.ToString();
+                txt_actual_value.Text = selected_data_list[i].Actual_Value.ToString();
+            }
         }
 
         private void cb_selected_function_SelectedIndexChanged(object sender, EventArgs e){
             selected_function_id = Convert.ToInt32(cb_selected_function.SelectedIndex) + 1;
-            test_edit_avalible();
+            int i = test_edit_avalible();
+            if (i != -1){
+                txt_persision.Text = selected_data_list[i].Persision.ToString();
+                txt_actual_value.Text = selected_data_list[i].Actual_Value.ToString();
+            }
         }
 
         #region text input and validation
@@ -141,7 +149,9 @@ namespace Second_Year_Project{
 
         private void txt_actual_value_TextChanged(object sender, EventArgs e){
             if (txt_actual_value.Text != ""){
-                try { selected_actual_value = Convert.ToDouble(txt_actual_value.Text); }
+                try { 
+                    selected_actual_value = Convert.ToDouble(txt_actual_value.Text); 
+                }
                 catch (System.FormatException) { MessageBox.Show("The value you entered was not a number"); }
             }
         }
@@ -157,21 +167,28 @@ namespace Second_Year_Project{
             DisplayData_model_list();
         }
 
-        private void test_edit_avalible(){
+        private int test_edit_avalible(){
             for (int i = 0; i < selected_data_list.Count; i++){
                 if (selected_data_list[i].Function_ID.ToString() == selected_function_id.ToString()){
-                    txt_persision.Text = selected_data_list[i].Persision.ToString();
-                    txt_actual_value.Text = selected_data_list[i].Actual_Value.ToString();
-                    break;
+                    return i;
                 } 
             }
-            
-             
-             
+            return -1;
         }
 
         private void btn_edit_function_Click(object sender, EventArgs e){
-            test_edit_avalible();
+            if (test_edit_avalible() != -1){
+                clsDBConnector dbConnector = new clsDBConnector();
+                string cmdStr = "UPDATE Standard_output " +
+                                $"SET [Precision] ={selected_persision}, Actual_Value ={selected_actual_value} " +
+                                $"WHERE Standard_ID ={selected_modle_id} AND Function_ID ={selected_function_id}";
+                dbConnector.Connect();
+                dbConnector.DoDML(cmdStr);
+                dbConnector.Close();
+                DisplayData_model_list();
+            }
+            else { MessageBox.Show("There was not enought data :[");}
+            
         }
     }
 }
