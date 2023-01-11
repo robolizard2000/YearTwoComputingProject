@@ -83,6 +83,12 @@
     <Compile Include="frm_new_device.Designer.cs">
       <DependentUpon>frm_new_device.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Graph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Graph.Designer.cs">
+      <DependentUpon>frm_Graph.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

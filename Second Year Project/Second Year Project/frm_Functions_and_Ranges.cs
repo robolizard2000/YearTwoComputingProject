@@ -31,6 +31,7 @@ namespace Second_Year_Project{
             InitializeComponent();
         }
         #region Selected data
+        public int selected_function_ID = 0;
         public string selected_function_name = "";
         public string selected_function_symblo = "";
         public int selected_exponent = 0;
@@ -114,6 +115,7 @@ namespace Second_Year_Project{
         private int test_edit_avalible(){
             for (int i = 0; i < selected_data_list.Count; i++){
                 if (selected_data_list[i].Function_name.ToString() == selected_function_name.ToString()){
+                    selected_function_ID = selected_data_list[i].Function_ID;
                     return i;
                 }
             }
@@ -123,9 +125,9 @@ namespace Second_Year_Project{
         private void btn_edit_function_Click(object sender, EventArgs e){
             if (test_edit_avalible() != -1){
                 clsDBConnector dbConnector = new clsDBConnector();
-                string cmdStr = "UPDATE Standard_output " +
-                                $"SET [Precision] ={selected_persision}, Actual_Value ={selected_actual_value} " +
-                                $"WHERE Standard_ID ={selected_modle_id} AND Function_ID ={selected_function_id}";
+                string cmdStr = "UPDATE       Functions \n" +
+                                $"SET Fuction_ID ={selected_function_ID}, Function ='{selected_function_symblo}', Exponent ={selected_exponent}, Function_name ='{selected_function_name}'\n" +
+                                $"WHERE Function_name ='{selected_function_name}'";
                 dbConnector.Connect();
                 dbConnector.DoDML(cmdStr);
                 dbConnector.Close();

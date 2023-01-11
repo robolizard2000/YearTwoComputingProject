@@ -28,13 +28,16 @@ namespace Second_Year_Project{
         private void btn_test_device_Click(object sender, EventArgs e){}
 
         private void btn_test_standard_Click(object sender, EventArgs e){ }
+
+        private void btn_graph_view_Click(object sender, EventArgs e) { frm_Graph frm = new frm_Graph(); frm.Show(); }
         #endregion
 
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
+        
     }
 }

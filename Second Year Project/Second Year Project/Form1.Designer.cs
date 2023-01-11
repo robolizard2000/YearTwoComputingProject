@@ -36,6 +36,7 @@
             this.btn_test_device = new System.Windows.Forms.Button();
             this.btn_edit_functions = new System.Windows.Forms.Button();
             this.btn_test_standard = new System.Windows.Forms.Button();
+            this.btn_graph_view = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_title
@@ -125,11 +126,23 @@
             this.btn_test_standard.UseVisualStyleBackColor = true;
             this.btn_test_standard.Click += new System.EventHandler(this.btn_test_standard_Click);
             // 
+            // btn_graph_view
+            // 
+            this.btn_graph_view.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_graph_view.Location = new System.Drawing.Point(100, 392);
+            this.btn_graph_view.Name = "btn_graph_view";
+            this.btn_graph_view.Size = new System.Drawing.Size(300, 40);
+            this.btn_graph_view.TabIndex = 8;
+            this.btn_graph_view.Text = "Graph View";
+            this.btn_graph_view.UseVisualStyleBackColor = true;
+            this.btn_graph_view.Click += new System.EventHandler(this.btn_graph_view_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.btn_graph_view);
             this.Controls.Add(this.btn_test_standard);
             this.Controls.Add(this.btn_test_device);
             this.Controls.Add(this.btn_edit_functions);
@@ -155,6 +168,7 @@
         private System.Windows.Forms.Button btn_test_device;
         private System.Windows.Forms.Button btn_edit_functions;
         private System.Windows.Forms.Button btn_test_standard;
+        private System.Windows.Forms.Button btn_graph_view;
     }
 }
 
